@@ -22,5 +22,6 @@ public class Laboratorio {
     @OneToMany(mappedBy = "laboratorio", cascade = CascadeType.ALL)
     private List<NroOrdenC> ordenes;
 
-    // Getters y setters
+
+    // Getters y setterss
 }
