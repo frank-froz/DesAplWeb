@@ -1,4 +1,9 @@
 package com.tecsup.evahuaytalla.repository;
 
-public class NroOrdenCRepository {
+import com.tecsup.evahuaytalla.entity.NroOrdenC;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface NroOrdenCRepository extends JpaRepository<NroOrdenC, Long> {
 }
