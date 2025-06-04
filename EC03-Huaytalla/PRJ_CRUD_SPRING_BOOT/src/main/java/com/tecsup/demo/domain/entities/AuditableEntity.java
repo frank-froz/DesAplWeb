@@ -1,4 +1,6 @@
 package com.tecsup.demo.domain.entities;
 
-public class AuditableEntity {
+public interface AuditableEntity {
+    int getId();
+    String getNombreTabla();
 }
