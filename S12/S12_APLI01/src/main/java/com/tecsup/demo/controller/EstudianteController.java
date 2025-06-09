@@ -14,6 +14,11 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
+    @RequestMapping("/")
+    public String inicio() {
+        return "redirect:/estudiantes/lista";
+    }
+
     @GetMapping
     public String listarEstudiantes(Model model) {
         model.addAttribute("estudiantes", estudianteService.listarEstudiantes());
