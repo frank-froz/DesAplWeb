@@ -1,4 +1,7 @@
 package com.tecsup.demo.repository;
 
-public interface EstudianteRepository {
+import com.tecsup.demo.model.Estudiante;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
 }
