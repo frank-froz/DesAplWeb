@@ -1,9 +1,9 @@
-package com.tecsup.demo.controller;
+package com.tecsup.demo.controlador;
 
 
-import com.tecsup.demo.exceptions.ResourceNotFoundException;
-import com.tecsup.demo.model.Empleado;
-import com.tecsup.demo.repository.EmpleadoRepository;
+import com.tecsup.demo.excepciones.ResourceNotFoundException;
+import com.tecsup.demo.modelo.Empleado;
+import com.tecsup.demo.repositorio.EmpleadoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +14,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "http://localhost:4200")
-public class EmpleadoController {
+@CrossOrigin(origins = "http://localhost:5173")
+public class EmpleadoControlador {
 
     @Autowired
-    private EmpleadoRepository empleadoRepository;
+    private EmpleadoRepositorio empleadoRepository;
 
     //este metodo sirve para listar todos los empleados
     @GetMapping("/empleados")

@@ -1,4 +1,4 @@
-package com.tecsup.demo.model;
+package com.tecsup.demo.modelo;
 
 import jakarta.persistence.*;
 
