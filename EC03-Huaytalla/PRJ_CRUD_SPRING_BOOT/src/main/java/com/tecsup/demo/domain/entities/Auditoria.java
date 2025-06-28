@@ -37,41 +37,53 @@ public class Auditoria {
                 + idRegistro + ", fecha=" + fecha + ", usuario=" + usuario
                 + ", tipo=" + tipo + "]";
     }
+
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getTabla() {
         return tabla;
     }
+
     public void setTabla(String tabla) {
         this.tabla = tabla;
     }
+
     public Integer getIdRegistro() {
         return idRegistro;
     }
+
     public void setIdRegistro(Integer idRegistro) {
         this.idRegistro = idRegistro;
     }
+
     public Date getFecha() {
         return fecha;
     }
+
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
     public String getUsuario() {
         return usuario;
     }
+
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
     public String getTipo() {
         return tipo;
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
 }
+
