@@ -1,6 +1,5 @@
 package com.tecsup.demo.controlador;
 
-
 import com.tecsup.demo.excepciones.ResourceNotFoundException;
 import com.tecsup.demo.modelo.Empleado;
 import com.tecsup.demo.repositorio.EmpleadoRepositorio;
@@ -16,23 +15,19 @@ import java.util.Map;
 @RequestMapping("/api/v1/")
 @CrossOrigin(origins = "http://localhost:5173")
 public class EmpleadoControlador {
-
     @Autowired
     private EmpleadoRepositorio empleadoRepository;
 
-    //este metodo sirve para listar todos los empleados
     @GetMapping("/empleados")
     public List<Empleado> listarTodosLosEmpleados() {
         return empleadoRepository.findAll();
     }
 
-    //este metodo sirve para guardar el empleado
     @PostMapping("/empleados")
     public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
         return empleadoRepository.save(empleado);
     }
 
-    //este metodo sirve para buscar un empleado
     @GetMapping("/empleados/{id}")
     public ResponseEntity<Empleado> obtenerEmpleadoPorId(@PathVariable Long id){
         Empleado empleado = empleadoRepository.findById(id)
@@ -40,7 +35,6 @@ public class EmpleadoControlador {
         return ResponseEntity.ok(empleado);
     }
 
-    //este metodo sirve para actualizar empleado
     @PutMapping("/empleados/{id}")
     public ResponseEntity<Empleado> actualizarEmpleado(@PathVariable Long id,@RequestBody Empleado detallesEmpleado){
         Empleado empleado = empleadoRepository.findById(id)
@@ -54,7 +48,6 @@ public class EmpleadoControlador {
         return ResponseEntity.ok(empleadoActualizado);
     }
 
-    //este metodo sirve para eliminar un empleado
     @DeleteMapping("/empleados/{id}")
     public ResponseEntity<Map<String,Boolean>> eliminarEmpleado(@PathVariable Long id){
         Empleado empleado = empleadoRepository.findById(id)
