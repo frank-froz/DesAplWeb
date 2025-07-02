@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: springboot-backend
+    env: docker
+    plan: free
+    repo: https://github.com/frank-froz/DesAplWeb/tree/main/S15/WS_SPRING_BOOT_ANGULAR
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
