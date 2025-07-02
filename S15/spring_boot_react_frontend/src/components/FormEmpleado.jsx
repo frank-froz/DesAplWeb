@@ -9,7 +9,7 @@ const FormEmpleado = () => {
         email: ""
     });
 
-    const { id } = useParams(); // Si hay ID, es edición
+    const { id } = useParams(); 
     const navigate = useNavigate();
 
     useEffect(() => {
