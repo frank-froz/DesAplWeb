@@ -1,15 +1,15 @@
-# Imagen base de Java
-FROM eclipse-temurin:17-jdk-alpine
-
-# Directorio de trabajo dentro del contenedor
+# 1️⃣ Etapa de build
+FROM maven:3.9.3-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copia el jar al contenedor
-COPY target/*.jar app.jar
+# 2️⃣ Etapa de ejecución
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-# Puerto que usará Render (usa variable de entorno PORT)
 ENV PORT 8080
 EXPOSE ${PORT}
 
-# Comando para ejecutar el jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
